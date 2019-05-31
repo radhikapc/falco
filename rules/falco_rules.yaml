@@ -1104,7 +1104,7 @@
   condition: (proc.name=prometheus-conf and fd.name startswith /etc/prometheus/config_out)
 
 - macro: openshift_writing_conf
-  condition: (proc.name=oc and (fd.name startswith /etc/origin/node or fd.name startswith /etc/sysconfig/origin-node))
+  condition: (proc.name=oc and fd.name startswith /etc/origin/node)
 
 - macro: etcd_manager_updating_dns
   condition: (container and proc.name=etcd-manager and fd.name=/etc/hosts)
